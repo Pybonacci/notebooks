@@ -1,0 +1,26 @@
+body {
+    font-size: 1.0em;
+}
+
+section.stack:first-child {
+    text-align: center;
+}
+section.stack:first-child h2:nth-child(4) {
+    margin-top: 0.3em;
+}
+
+section.stack ul li,
+section.stack ol li{
+    margin-top: 0.4em;
+}
+
+div.figure > img {
+    margin: 2em auto;
+}
+
+span.small {
+    color: #333;
+    display: inline-block;
+    font-size: 0.6em;
+    line-height: 1.4em;
+}
