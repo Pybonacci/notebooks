@@ -1,0 +1,37 @@
+lines.linewidth: 1.0
+lines.color: 5390C1
+lines.antialiased: True
+patch.linewidth: 0.5
+patch.facecolor: FFD333
+patch.edgecolor: FFE771
+patch.antialiased: True
+font.family: Arial
+font.size: 10.0
+font.monospace: DejaVu Sans Mono, Andale Mono, Nimbus Mono L, Courier New, Courier, Fixed, Terminal, monospace
+axes.facecolor: eeeeee
+axes.edgecolor: bcbcbc
+axes.linewidth: 1.0
+axes.grid: True
+axes.titlesize: x-large
+axes.labelsize: large
+axes.labelcolor: 555555
+axes.axisbelow: True
+axes.color_cycle: 5390C1, FFD333, FFE771, 70A4CB, 4385BB, 3D79AA, 39719E
+xtick.major.size: 0.0
+xtick.minor.size: 0.0
+xtick.major.pad: 6.0
+xtick.minor.pad: 6.0
+xtick.color: 555555
+xtick.direction: in
+ytick.major.size: 0.0
+ytick.minor.size: 0.0
+ytick.major.pad: 6.0
+ytick.minor.pad: 6.0
+ytick.color: 555555
+ytick.direction: in
+legend.fancybox: True
+legend.numpoints: 1
+figure.figsize: 11, 8
+figure.facecolor: 1.0
+figure.edgecolor: 0.5
+figure.subplot.hspace: 0.5
