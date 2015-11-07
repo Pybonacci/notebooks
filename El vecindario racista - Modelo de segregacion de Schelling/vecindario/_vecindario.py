@@ -267,10 +267,16 @@ def vecin_print(par, datacolor, dim, n):
     plt.text(0, -1 - 2*dim/20, nota2,fontsize=12)
     
 
-def step_mudanza(par, datacolor, n, dim, h_fel, h_seg):
+def step_mudanza(par, datacolor, n, dim, h_fel = None, h_seg = None):
     '''Esta función recorre toda la lista de vecinos y los muda si no están satisfechos.
     después, guarda los valores conseguidos de felicidad y segregación, y por último
     representa todo gráficamente'''
+    
+    
+    if not h_fel: h_fel = []                  
+    if not h_seg: h_seg = []  
+        
+        
     #Mudanza
     for i in par.listavecinos : 
         if not i.satisfecho()[0]:
@@ -325,9 +331,15 @@ def step_mudanza(par, datacolor, n, dim, h_fel, h_seg):
     return n 
 
 
-def step_mudanza_ciego(par, numcolor, n, dim, h_fel, h_seg):
+def _step_mudanza_ciego(par, numcolor, n, dim, h_fel = None, h_seg = None):
     '''Esta función recorre la lista de vecinos y los muda si no están satisfechos,
     pero no los representa gráficamente.'''
+    
+    
+    if not h_fel: h_fel = []                  
+    if not h_seg: h_seg = []  
+         
+    
     for i in par.listavecinos : 
         if not i.satisfecho()[0]:
             i.mudanza()
@@ -346,19 +358,20 @@ def step_mudanza_ciego(par, numcolor, n, dim, h_fel, h_seg):
     return n + 1
 
 
-def step_multiple(par, datacolor, n, dim, historia_felicidad, historia_segregacion, numsteps = 20):
+def step_multiple(par, datacolor, n, dim, h_fel = None, h_seg = None, numsteps = 20):
     '''Recorre la lista "numstep" veces, mudando a los vecinos infelices, y finalmente
     representa gráficamente el resultado'''
-    
+        
+    if not h_fel: h_fel = []                  
+    if not h_seg: h_seg = []  
+     
     print('Calculando steps, total', numsteps, ':', end=' ')
     for i in range(numsteps-1):
-        n = step_mudanza_ciego(par, datacolor, n, dim,
-               historia_felicidad, historia_segregacion)
+        n = _step_mudanza_ciego(par, datacolor, n, dim, h_fel, h_seg)
         print(i + 1 , end='·')
         
     print(numsteps)
-    n = step_mudanza(par, datacolor, n, dim,
-               historia_felicidad, historia_segregacion)
+    n = step_mudanza(par, datacolor, n, dim, h_fel, h_seg)
     return n
     
 def evolucion(h_fel, h_seg):
